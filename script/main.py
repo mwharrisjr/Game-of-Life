@@ -81,7 +81,7 @@ def print_grid(rows, cols, grid, generation):
     output_str = ""
 
     # Compile the output string together and then print it to console
-    output_str += "Generation {0} - To exit the program early press <Ctrl-C>\n\r".format(generation)
+    output_str += "Generation {0} - To exit the program press <Ctrl-C>\n\r".format(generation)
     for row in range(rows):
         for col in range(cols):
             if grid[row][col] == 0:
