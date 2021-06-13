@@ -39,6 +39,9 @@ def resize_console(rows, cols):
     elif sys.platform.startswith('linux'):
         command = "\x1b[8;{rows};{cols}t".format(rows=rows + 3, cols=cols + cols)
         sys.stdout.write(command)
+    elif sys.platform.startswith('darwin'):
+        command = "\x1b[8;{rows};{cols}t".format(rows=rows + 3, cols=cols + cols)
+        sys.stdout.write(command)
     else:
         print("Unable to resize terminal. Your operating system is not supported.\n\r")
 
