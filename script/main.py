@@ -16,6 +16,8 @@ def clear_console():
         os.system("cls")
     elif sys.platform.startswith('linux'):
         os.system("clear")
+    elif sys.platform.startswith('darwin'):
+        os.system("clear")
     else:
         print("Unable to clear terminal. Your operating system is not supported.\n\r")
 
