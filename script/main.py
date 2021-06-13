@@ -199,6 +199,7 @@ def run_game():
 
     # Get the number of rows and columns for the Game of Life grid
     rows = get_integer_value("Enter the number of rows (10-60): ", 10, 60)
+    clear_console()
     cols = get_integer_value("Enter the number of cols (10-118): ", 10, 118)
 
     # Get the number of generations that the Game of Life should run for
