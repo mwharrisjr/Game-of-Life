@@ -221,8 +221,12 @@ def run_game():
         current_generation, next_generation = next_generation, current_generation
 
     print_grid(rows, cols, current_generation, gen)
-    input("Press <Enter> to exit.")
+    return input("<Enter> to exit or r to run again: ")
 
 
 # Start the Game of Life
-run_game()
+run = "r"
+while run == "r":
+    out = run_game()
+    run = out
+
