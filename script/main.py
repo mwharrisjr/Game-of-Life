@@ -199,7 +199,7 @@ def run_game():
     cols = get_integer_value("Enter the number of cols (10-118): ", 10, 118)
 
     # Get the number of generations that the Game of Life should run for
-    generations = get_integer_value("Enter the number of generations (1-100000): ", 1, 100000)
+    generations = 10000000000
     resize_console(rows, cols)
 
     # Create the initial random Game of Life grids
