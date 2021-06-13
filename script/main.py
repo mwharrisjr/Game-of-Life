@@ -5,7 +5,6 @@ import os
 import random
 import sys
 
-inp = sys.argv
 
 def clear_console():
     """
@@ -218,10 +217,7 @@ def run_game():
             break
         print_grid(rows, cols, current_generation, gen)
         create_next_grid(rows, cols, current_generation, next_generation)
-        if inp[1] == "-f":
-            continue
-        else:
-            time.sleep(1 / 5.0)
+        time.sleep(1 / 5.0)
         current_generation, next_generation = next_generation, current_generation
 
     print_grid(rows, cols, current_generation, gen)
