@@ -23,5 +23,3 @@ In order to run this project the user must open a terminal/console and navigate 
 
 Once the program has been started the user will be prompted to input the number of **rows** and **columns** to make the Game of Life grid.
 
-### Example Output
-![Example Output](https://zj0l5w-sn3301.files.1drv.com/y3mCRjxuvhMBzKsaDbamx6HlqF5_oUOjGp0ExWsPaHEMhMk9m2fLgwrYKHLH4-1Ye3Dq3Cy9H_icYXxaaBdBV_GuABpNuv8B0Q6rxaLhE2jYnZ0LhCO-PdDs25j2vkSoJfZRA_2SwJPH8YYOT7RULaZ7voqsYK5vlENs2sNoY3ggK8?width=514&height=433&cropmode=none)
