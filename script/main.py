@@ -16,6 +16,8 @@ def clear_console():
         os.system("cls")
     elif sys.platform.startswith('linux'):
         os.system("clear")
+    elif sys.platform.startswith('darwin'):
+        os.system("clear")
     else:
         print("Unable to clear terminal. Your operating system is not supported.\n\r")
 
@@ -35,6 +37,9 @@ def resize_console(rows, cols):
         command = "mode con: cols={0} lines={1}".format(cols + cols, rows + 5)
         os.system(command)
     elif sys.platform.startswith('linux'):
+        command = "\x1b[8;{rows};{cols}t".format(rows=rows + 3, cols=cols + cols)
+        sys.stdout.write(command)
+    elif sys.platform.startswith('darwin'):
         command = "\x1b[8;{rows};{cols}t".format(rows=rows + 3, cols=cols + cols)
         sys.stdout.write(command)
     else:
@@ -79,7 +84,7 @@ def print_grid(rows, cols, grid, generation):
     output_str = ""
 
     # Compile the output string together and then print it to console
-    output_str += "Generation {0} - To exit the program early press <Ctrl-C>\n\r".format(generation)
+    output_str += "Generation {0} - To exit the program press <Ctrl-C>\n\r".format(generation)
     for row in range(rows):
         for col in range(cols):
             if grid[row][col] == 0:
@@ -194,10 +199,11 @@ def run_game():
 
     # Get the number of rows and columns for the Game of Life grid
     rows = get_integer_value("Enter the number of rows (10-60): ", 10, 60)
+    clear_console()
     cols = get_integer_value("Enter the number of cols (10-118): ", 10, 118)
 
     # Get the number of generations that the Game of Life should run for
-    generations = get_integer_value("Enter the number of generations (1-100000): ", 1, 100000)
+    generations = 5000
     resize_console(rows, cols)
 
     # Create the initial random Game of Life grids
@@ -215,8 +221,12 @@ def run_game():
         current_generation, next_generation = next_generation, current_generation
 
     print_grid(rows, cols, current_generation, gen)
-    input("Press <Enter> to exit.")
+    return input("<Enter> to exit or r to run again: ")
 
 
 # Start the Game of Life
-run_game()
+run = "r"
+while run == "r":
+    out = run_game()
+    run = out
+
